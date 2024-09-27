@@ -81,8 +81,8 @@ const HomeScreen: React.FC<HomeScreenProps> = ({navigation}) => {
             style={styles.oneDriveCloud}
           />
           <TouchableOpacity onPress={handlePress}>
-            <Text style={styles.coordinateText}>
-              {item.latitude}, {item.longitude}
+            <Text numberOfLines={1} style={styles.coordinateText}>
+              {item.latitude.toFixed(8)},{item.longitude.toFixed(8)}
             </Text>
           </TouchableOpacity>
         </View>
@@ -207,6 +207,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: PoppinsRegular,
     paddingLeft: (deviceWidth * 3) / 100,
+    maxWidth: (deviceWidth * 50) / 100,
   },
   oneDriveCloud: {
     width: 30,
