@@ -13,7 +13,7 @@ GPS Recorder is a React Native application that allows users to record and manag
 
 ## Screenshots
 
-![Initial State](link_to_screenshot) ![Coordinate List](link_to_screenshot)
+![Initial State](./assets/images/Screenshot1.png) ![Coordinate List](./assets/images/Screenshot2.png) ![Bonus](./assets/images/Screenshot3.png)
 
 ## Tech Stack
 
@@ -27,10 +27,42 @@ GPS Recorder is a React Native application that allows users to record and manag
 
 ## Installation
 
-To run this application, ensure you have [Node.js](https://nodejs.org/) installed. You can clone this repository and install the dependencies using Yarn:
+To run this application, ensure you have [Node.js](https://nodejs.org/) installed. You can clone this repository and install the dependencies using npm:
 
 ```bash
-git clone https://github.com/your_username/GPSRecorder.git
+git clone https://github.com/Milan3050/GPSRecorder-ZirohLabs.git
 cd GPSRecorder
-yarn install
+npm install
 ```
+
+## Running the App
+
+You can run the application on Android or iOS
+
+### Android
+
+```bash
+react-native run-android
+```
+
+### iOS
+
+```bash
+react-native run-ios
+```
+
+if facing any errors, start metro by running
+
+```bash
+npm start
+```
+
+and build app on XCode
+
+## Usage
+
+- Launch the app. Allow app to use location, and the initial screen will display a floating action button (FAB).
+- Tap the FAB to add your current GPS coordinates to the list.
+- View the list of coordinates displayed in simple list item format.
+- Use the delete button next to any coordinate to remove it from the list.
+- Optionally, tap on a coordinate to see its corresponding address.
