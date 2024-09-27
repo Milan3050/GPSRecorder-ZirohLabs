@@ -86,4 +86,4 @@ export const darkMapStyle = [
   },
 ];
 
-export const deviceColorScheme = Appearance.getColorScheme();
+export const deviceColorScheme = Appearance.getColorScheme(); //Using dark mode in maps if device is dark mode

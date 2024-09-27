@@ -2,11 +2,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import CoordinatesReducer from './reducers/CoordinatesReducer';
 import {configureStore} from '@reduxjs/toolkit';
 import {persistStore, persistReducer} from 'redux-persist';
-import PermissionReducer from './reducers/PermissionReducer';
 
 const persistConfig = {
   key: 'coordinates',
-  storage: AsyncStorage,
+  storage: AsyncStorage, //Using AsyncStorage to store persisted data
   whitelist: ['coordinates'],
 };
 
@@ -15,12 +14,12 @@ const persistedReducer = persistReducer(persistConfig, CoordinatesReducer);
 export const store = configureStore({
   reducer: {
     CoordinatesReducer: persistedReducer,
-    PermissionReducer: PermissionReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [
+          //ignoring the following actions for serializable check if ever used
           'persist/PERSIST',
           'persist/REHYDRATE',
           'persist/PERSIST',
@@ -36,7 +35,6 @@ export const store = configureStore({
   devTools: process.env.NODE_ENV !== 'production',
 });
 
-// Create a persistor object
 export const persistor = persistStore(store);
 
 export default store;

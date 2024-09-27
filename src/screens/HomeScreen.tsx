@@ -37,13 +37,14 @@ const HomeScreen: React.FC<HomeScreenProps> = ({navigation}) => {
 
   const dispatch = useDispatch();
 
+  //Function to fetch location of device
   const findLocation = async () => {
     try {
       const newCoordinates: Coordinates | undefined = await addLocation(
         coordinatesList,
       );
       if (newCoordinates) {
-        dispatch(addCoordinates(newCoordinates));
+        dispatch(addCoordinates(newCoordinates)); //dispatching coordinates list into redux store
       }
     } catch (error: any) {
       if (
@@ -57,11 +58,15 @@ const HomeScreen: React.FC<HomeScreenProps> = ({navigation}) => {
     }
   };
 
+  //Function to delete a particular coordinate from list
   const deleteLocation = (id: number) => {
     dispatch(deleteCoordinates(id));
   };
 
+  //Rendering List
   const renderList = ({item}: {item: Coordinates}): React.JSX.Element => {
+
+    //Function to fetch address on clicking Coordinates
     const handlePress = async () => {
       try {
         const fetchedAddress = await getAddress(item);
@@ -108,6 +113,8 @@ const HomeScreen: React.FC<HomeScreenProps> = ({navigation}) => {
       </View>
     </View>
   );
+
+  //---------------------MAIN RENDER---------------------------//
 
   return (
     <View style={styles.mainContainer}>

@@ -13,7 +13,7 @@ import {requestLocationAuthorization} from '../services/LocationService';
 
 const SplashScreen: React.FC<SplashScreenProps> = ({navigation}) => {
   useEffect(() => {
-    requestLocationAuthorization();
+    requestLocationAuthorization(); //Requesting location permissions
 
     setTimeout(() => {
       navigation.navigate('HomeScreen');

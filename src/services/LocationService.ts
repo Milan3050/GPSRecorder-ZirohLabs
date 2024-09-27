@@ -2,6 +2,7 @@ import Geolocation from '@react-native-community/geolocation';
 import {Coordinates} from '../types/types';
 import Geocoder from 'react-native-geocoding';
 
+//Function to request location permissions
 export const requestLocationAuthorization = () => {
   return new Promise((resolve, reject) => {
     Geolocation.requestAuthorization(
@@ -22,6 +23,7 @@ export const requestLocationAuthorization = () => {
   });
 };
 
+//Function to fetch Coordinates
 export const addLocation = (
   coordinatesList: Coordinates[],
 ): Promise<Coordinates | undefined> => {
@@ -46,6 +48,7 @@ export const addLocation = (
   });
 };
 
+//Function to fetch address from Coordinates
 export const getAddress = (location: Coordinates): Promise<string> => {
   return Geocoder.from(location.latitude, location.longitude)
     .then(json => {

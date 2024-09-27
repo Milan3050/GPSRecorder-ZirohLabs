@@ -6,14 +6,6 @@ export interface Coordinates {
   longitude: number;
 }
 
-export interface CoordinatesState {
-  coordinates: Coordinates[];
-}
-
-export interface RootState {
-  CoordinatesReducer: CoordinatesState;
-}
-
 export type RootStackParamList = {
   SplashScreen: undefined;
   HomeScreen: undefined;

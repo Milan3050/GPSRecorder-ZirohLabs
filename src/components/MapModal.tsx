@@ -17,6 +17,7 @@ import {
 } from '../constants/styles';
 import {MapModalProps} from '../types/types';
 
+//MODAL TO RENDER MAPS
 const MapModal: React.FC<MapModalProps> = props => {
   const [isDarkMode, setIsDarkMode] = useState(deviceColorScheme === 'dark');
 
@@ -36,7 +37,6 @@ const MapModal: React.FC<MapModalProps> = props => {
       onRequestClose={props.onClose}>
       <View style={styles.modalContainer}>
         <View style={styles.modalContent}>
-          {/* Display modal content here */}
           <MapView
             provider={PROVIDER_GOOGLE} // This makes Google Maps the provider
             customMapStyle={isDarkMode ? darkMapStyle : []}
