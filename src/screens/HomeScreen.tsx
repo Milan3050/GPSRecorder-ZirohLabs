@@ -184,8 +184,8 @@ const styles = StyleSheet.create({
   },
   circle: {
     position: 'absolute',
-    right: 35,
-    bottom: 100,
+    right: 0,
+    bottom: 50,
     borderRadius: 50,
   },
   addButton: {
