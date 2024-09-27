@@ -13,7 +13,7 @@ GPS Recorder is a React Native application that allows users to record and manag
 
 ## Screenshots
 
-![Initial State](./assets/images/Screenshot1.png) ![Coordinate List](./assets/images/Screenshot2.png) ![Bonus](./assets/images/Screenshot3.png)
+![Initial State](./assets/images/Screenshot1.png)  ![Coordinate List](./assets/images/Screenshot2.png)  ![Bonus](./assets/images/Screenshot3.png)
 
 ## Tech Stack
 
