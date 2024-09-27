@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreen from '../screens/HomeScreen'; // Ensure the path is correct
+import HomeScreen from '../screens/HomeScreen';
 import SplashScreen from '../screens/SplashScreen';
 import {RootStackParamList} from '../types/types';
 

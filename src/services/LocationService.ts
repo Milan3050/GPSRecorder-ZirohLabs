@@ -5,12 +5,10 @@ import Geocoder from 'react-native-geocoding';
 export const requestLocationAuthorization = () => {
   return new Promise((resolve, reject) => {
     Geolocation.requestAuthorization(
-      // Success callback
       () => {
         console.log('Authorization granted');
-        resolve(true); // Resolve to true on success
+        resolve(true);
       },
-      // Error callback
       (error: {
         code: number;
         message: string;
@@ -18,7 +16,7 @@ export const requestLocationAuthorization = () => {
         POSITION_UNAVAILABLE: number;
         TIMEOUT: number;
       }) => {
-        resolve(false); // Resolve to false on failure
+        resolve(false);
       },
     );
   });
@@ -28,8 +26,6 @@ export const addLocation = (
   coordinatesList: Coordinates[],
 ): Promise<Coordinates | undefined> => {
   return new Promise((resolve, reject) => {
-    // Access the Redux state inside the async function
-
     Geolocation.getCurrentPosition(
       position => {
         const newCoords: Coordinates = {
@@ -37,14 +33,14 @@ export const addLocation = (
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
         };
-        resolve(newCoords); // Resolve with new coordinates
+        resolve(newCoords);
       },
       error => {
-        reject(error); // Reject the promise if there's an error
+        reject(error);
       },
       {
-        timeout: 15000, // Optional: adjust as needed
-        enableHighAccuracy: true, // Optional: use high accuracy if available
+        timeout: 15000,
+        enableHighAccuracy: true,
       },
     );
   });
@@ -53,11 +49,11 @@ export const addLocation = (
 export const getAddress = (location: Coordinates): Promise<string> => {
   return Geocoder.from(location.latitude, location.longitude)
     .then(json => {
-      const addressComponent = json.results[0].address_components[0];
-      return addressComponent.long_name; // Returning the long name of the address
+      const addressComponent = json.results[0].formatted_address;
+      return addressComponent;
     })
     .catch(error => {
       console.warn(error);
-      return ''; // Return an empty string or handle the error as needed
+      return '';
     });
 };

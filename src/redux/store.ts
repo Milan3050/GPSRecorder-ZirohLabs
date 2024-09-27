@@ -4,19 +4,17 @@ import {configureStore} from '@reduxjs/toolkit';
 import {persistStore, persistReducer} from 'redux-persist';
 import PermissionReducer from './reducers/PermissionReducer';
 
-// Persist config
 const persistConfig = {
   key: 'coordinates',
   storage: AsyncStorage,
   whitelist: ['coordinates'],
 };
 
-// Create a persisted reducer
 const persistedReducer = persistReducer(persistConfig, CoordinatesReducer);
 
 export const store = configureStore({
   reducer: {
-    CoordinatesReducer: persistedReducer, // Persisted userData reducer
+    CoordinatesReducer: persistedReducer,
     PermissionReducer: PermissionReducer,
   },
   middleware: getDefaultMiddleware =>
@@ -27,15 +25,15 @@ export const store = configureStore({
           'persist/REHYDRATE',
           'persist/PERSIST',
           'persist/REHYDRATE',
-          'persist/PURGE', // Ignore purge action
-          'persist/FLUSH', // Ignore flush action
-          'persist/PAUSE', // Ignore pause action
+          'persist/PURGE',
+          'persist/FLUSH',
+          'persist/PAUSE',
           'persist/REGISTER',
-        ], // Ignore redux-persist actions
-        ignoredPaths: ['_persist'], // Ignore the `_persist` key in state
+        ],
+        ignoredPaths: ['_persist'],
       },
     }),
-  devTools: process.env.NODE_ENV !== 'production', // Enable devTools in development mode
+  devTools: process.env.NODE_ENV !== 'production',
 });
 
 // Create a persistor object
