@@ -1,79 +1,36 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# GPS Recorder
 
-# Getting Started
+## Overview
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+GPS Recorder is a React Native application that allows users to record and manage their GPS coordinates. Users can easily add their current GPS location, view a list of recorded coordinates, and delete any coordinates they no longer want. The app utilizes local storage to persist data, ensuring coordinates are available even after the app is closed and reopened.
 
-## Step 1: Start the Metro Server
+## Features
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- **Add GPS Coordinate:** Tap the floating action button to add the current GPS coordinates (latitude and longitude) to the list.
+- **Delete Coordinate:** Remove any coordinate from the list using the associated delete button.
+- **Persistent Data:** Recorded coordinates are saved locally, so they persist even after closing the app.
+- **Bonus Feature:** Tapping a coordinate opens a popup showing the corresponding address.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Screenshots
 
-```bash
-# using npm
-npm start
+![Initial State](link_to_screenshot) ![Coordinate List](link_to_screenshot)
 
-# OR using Yarn
-yarn start
-```
+## Tech Stack
 
-## Step 2: Start your Application
+- **Framework:** React Native
+- **State Management:** Redux Toolkit
+- **Routing:** React Navigation
+- **Storage:** AsyncStorage
+- **Geolocation:** React Native Community Geolocation
+- **Maps:** React Native Maps
+- **Permissions:** React Native Permissions
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## Installation
 
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
+To run this application, ensure you have [Node.js](https://nodejs.org/) installed. You can clone this repository and install the dependencies using Yarn:
 
 ```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+git clone https://github.com/your_username/GPSRecorder.git
+cd GPSRecorder
+yarn install
 ```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
