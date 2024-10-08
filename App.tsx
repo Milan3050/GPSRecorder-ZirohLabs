@@ -10,7 +10,7 @@ import {PersistGate} from 'redux-persist/integration/react';
 import store, {persistor} from './src/redux/store';
 
 function App(): React.JSX.Element {
-  Geocoder.init('AIzaSyDJdCcL_G2KHfLrDkKcjNphNadyt2Oqb6E'); //initializing Geocoder using Google Maps API (Ideally will be in .env file)
+  Geocoder.init('ENTER YOUR API KEY HERE'); //initializing Geocoder using Google Maps API (Ideally will be in .env file)
 
   return (
     <Provider store={store}>
